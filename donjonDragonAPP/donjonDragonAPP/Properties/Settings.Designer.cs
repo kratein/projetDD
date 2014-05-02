@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace donjondragon.Properties
+namespace donjonDragonAPP.Properties
 {
 
 

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("donjondragon")]
+[assembly: AssemblyTitle("donjonDragonAPP")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("donjondragon")]
+[assembly: AssemblyProduct("donjonDragonAPP")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("11ee200b-ca3f-458b-8b96-3b98555234fb")]
+[assembly: Guid("735859d3-608a-49ae-b3ea-1611387c551f")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
