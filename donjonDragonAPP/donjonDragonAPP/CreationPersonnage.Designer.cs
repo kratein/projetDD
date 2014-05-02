@@ -50,6 +50,7 @@
             this.nudCha = new System.Windows.Forms.NumericUpDown();
             this.lbSag = new System.Windows.Forms.Label();
             this.lbCha = new System.Windows.Forms.Label();
+            this.cbClasse = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudFor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDex)).BeginInit();
@@ -146,7 +147,7 @@
             // 
             // nudFor
             // 
-            this.nudFor.Location = new System.Drawing.Point(434, 63);
+            this.nudFor.Location = new System.Drawing.Point(434, 62);
             this.nudFor.Maximum = new decimal(new int[] {
             18,
             0,
@@ -158,6 +159,7 @@
             0,
             0});
             this.nudFor.Name = "nudFor";
+            this.nudFor.ReadOnly = true;
             this.nudFor.Size = new System.Drawing.Size(42, 20);
             this.nudFor.TabIndex = 10;
             this.nudFor.Value = new decimal(new int[] {
@@ -207,6 +209,7 @@
             0,
             0});
             this.nudCon.Name = "nudCon";
+            this.nudCon.ReadOnly = true;
             this.nudCon.Size = new System.Drawing.Size(42, 20);
             this.nudCon.TabIndex = 14;
             this.nudCon.Value = new decimal(new int[] {
@@ -238,6 +241,7 @@
             0,
             0});
             this.nudDex.Name = "nudDex";
+            this.nudDex.ReadOnly = true;
             this.nudDex.Size = new System.Drawing.Size(42, 20);
             this.nudDex.TabIndex = 16;
             this.nudDex.Value = new decimal(new int[] {
@@ -260,6 +264,7 @@
             0,
             0});
             this.nudInt.Name = "nudInt";
+            this.nudInt.ReadOnly = true;
             this.nudInt.Size = new System.Drawing.Size(42, 20);
             this.nudInt.TabIndex = 17;
             this.nudInt.Value = new decimal(new int[] {
@@ -291,6 +296,7 @@
             0,
             0});
             this.nudSag.Name = "nudSag";
+            this.nudSag.ReadOnly = true;
             this.nudSag.Size = new System.Drawing.Size(42, 20);
             this.nudSag.TabIndex = 19;
             this.nudSag.Value = new decimal(new int[] {
@@ -313,6 +319,7 @@
             0,
             0});
             this.nudCha.Name = "nudCha";
+            this.nudCha.ReadOnly = true;
             this.nudCha.Size = new System.Drawing.Size(42, 20);
             this.nudCha.TabIndex = 20;
             this.nudCha.Value = new decimal(new int[] {
@@ -339,12 +346,25 @@
             this.lbCha.TabIndex = 22;
             this.lbCha.Text = "Charisme";
             // 
+            // cbClasse
+            // 
+            this.cbClasse.FormattingEnabled = true;
+            this.cbClasse.Items.AddRange(new object[] {
+            "Guerrier",
+            "Voleur",
+            "Mage"});
+            this.cbClasse.Location = new System.Drawing.Point(56, 79);
+            this.cbClasse.Name = "cbClasse";
+            this.cbClasse.Size = new System.Drawing.Size(121, 21);
+            this.cbClasse.TabIndex = 23;
+            // 
             // CreationPersonnage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 310);
             this.ControlBox = false;
+            this.Controls.Add(this.cbClasse);
             this.Controls.Add(this.lbCha);
             this.Controls.Add(this.lbSag);
             this.Controls.Add(this.nudCha);
@@ -404,5 +424,6 @@
         private System.Windows.Forms.NumericUpDown nudCha;
         private System.Windows.Forms.Label lbSag;
         private System.Windows.Forms.Label lbCha;
+        private System.Windows.Forms.ComboBox cbClasse;
     }
 }
