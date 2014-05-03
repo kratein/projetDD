@@ -61,6 +61,7 @@
             this.Controls.Add(this.btJouer);
             this.Controls.Add(this.btQuitter);
             this.Name = "Launcher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Launcher";
             this.ResumeLayout(false);
 

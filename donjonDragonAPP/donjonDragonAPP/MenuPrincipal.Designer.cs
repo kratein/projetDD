@@ -83,6 +83,7 @@
             this.Controls.Add(this.btNew);
             this.Controls.Add(this.btContinuer);
             this.Name = "MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
             this.ResumeLayout(false);
 

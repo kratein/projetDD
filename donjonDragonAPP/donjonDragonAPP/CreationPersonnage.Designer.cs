@@ -34,8 +34,6 @@
             this.lbNom = new System.Windows.Forms.Label();
             this.lbClasse = new System.Windows.Forms.Label();
             this.lbRace = new System.Windows.Forms.Label();
-            this.cbRace = new System.Windows.Forms.ComboBox();
-            this.cbSexe = new System.Windows.Forms.ComboBox();
             this.lbSexe = new System.Windows.Forms.Label();
             this.nudFor = new System.Windows.Forms.NumericUpDown();
             this.lbCarac = new System.Windows.Forms.Label();
@@ -50,7 +48,11 @@
             this.nudCha = new System.Windows.Forms.NumericUpDown();
             this.lbSag = new System.Windows.Forms.Label();
             this.lbCha = new System.Windows.Forms.Label();
-            this.cbClasse = new System.Windows.Forms.ComboBox();
+            this.listbClasse = new System.Windows.Forms.ListBox();
+            this.listbRace = new System.Windows.Forms.ListBox();
+            this.listbSexe = new System.Windows.Forms.ListBox();
+            this.lbPoints = new System.Windows.Forms.Label();
+            this.lbNbPts = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDex)).BeginInit();
@@ -85,6 +87,7 @@
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(100, 20);
             this.tbNom.TabIndex = 3;
+            this.tbNom.Validated += new System.EventHandler(this.tbNom_Validated);
             // 
             // lbNom
             // 
@@ -107,39 +110,16 @@
             // lbRace
             // 
             this.lbRace.AutoSize = true;
-            this.lbRace.Location = new System.Drawing.Point(12, 110);
+            this.lbRace.Location = new System.Drawing.Point(12, 114);
             this.lbRace.Name = "lbRace";
             this.lbRace.Size = new System.Drawing.Size(33, 13);
             this.lbRace.TabIndex = 6;
             this.lbRace.Text = "Race";
             // 
-            // cbRace
-            // 
-            this.cbRace.FormattingEnabled = true;
-            this.cbRace.Items.AddRange(new object[] {
-            "Humain",
-            "Nain",
-            "Drakéide"});
-            this.cbRace.Location = new System.Drawing.Point(56, 107);
-            this.cbRace.Name = "cbRace";
-            this.cbRace.Size = new System.Drawing.Size(121, 21);
-            this.cbRace.TabIndex = 7;
-            // 
-            // cbSexe
-            // 
-            this.cbSexe.FormattingEnabled = true;
-            this.cbSexe.Items.AddRange(new object[] {
-            "Masculin",
-            "Féminin"});
-            this.cbSexe.Location = new System.Drawing.Point(56, 135);
-            this.cbSexe.Name = "cbSexe";
-            this.cbSexe.Size = new System.Drawing.Size(121, 21);
-            this.cbSexe.TabIndex = 8;
-            // 
             // lbSexe
             // 
             this.lbSexe.AutoSize = true;
-            this.lbSexe.Location = new System.Drawing.Point(12, 138);
+            this.lbSexe.Location = new System.Drawing.Point(12, 152);
             this.lbSexe.Name = "lbSexe";
             this.lbSexe.Size = new System.Drawing.Size(31, 13);
             this.lbSexe.TabIndex = 9;
@@ -147,7 +127,7 @@
             // 
             // nudFor
             // 
-            this.nudFor.Location = new System.Drawing.Point(434, 62);
+            this.nudFor.Location = new System.Drawing.Point(434, 85);
             this.nudFor.Maximum = new decimal(new int[] {
             18,
             0,
@@ -171,7 +151,7 @@
             // lbCarac
             // 
             this.lbCarac.AutoSize = true;
-            this.lbCarac.Location = new System.Drawing.Point(334, 41);
+            this.lbCarac.Location = new System.Drawing.Point(334, 33);
             this.lbCarac.Name = "lbCarac";
             this.lbCarac.Size = new System.Drawing.Size(85, 13);
             this.lbCarac.TabIndex = 11;
@@ -180,7 +160,7 @@
             // lbForce
             // 
             this.lbForce.AutoSize = true;
-            this.lbForce.Location = new System.Drawing.Point(366, 65);
+            this.lbForce.Location = new System.Drawing.Point(366, 88);
             this.lbForce.Name = "lbForce";
             this.lbForce.Size = new System.Drawing.Size(34, 13);
             this.lbForce.TabIndex = 12;
@@ -189,7 +169,7 @@
             // lbCon
             // 
             this.lbCon.AutoSize = true;
-            this.lbCon.Location = new System.Drawing.Point(366, 87);
+            this.lbCon.Location = new System.Drawing.Point(366, 110);
             this.lbCon.Name = "lbCon";
             this.lbCon.Size = new System.Drawing.Size(62, 13);
             this.lbCon.TabIndex = 13;
@@ -197,7 +177,7 @@
             // 
             // nudCon
             // 
-            this.nudCon.Location = new System.Drawing.Point(434, 85);
+            this.nudCon.Location = new System.Drawing.Point(434, 108);
             this.nudCon.Maximum = new decimal(new int[] {
             18,
             0,
@@ -221,7 +201,7 @@
             // lbDex
             // 
             this.lbDex.AutoSize = true;
-            this.lbDex.Location = new System.Drawing.Point(366, 109);
+            this.lbDex.Location = new System.Drawing.Point(366, 132);
             this.lbDex.Name = "lbDex";
             this.lbDex.Size = new System.Drawing.Size(55, 13);
             this.lbDex.TabIndex = 15;
@@ -229,7 +209,7 @@
             // 
             // nudDex
             // 
-            this.nudDex.Location = new System.Drawing.Point(434, 107);
+            this.nudDex.Location = new System.Drawing.Point(434, 130);
             this.nudDex.Maximum = new decimal(new int[] {
             18,
             0,
@@ -252,7 +232,7 @@
             // 
             // nudInt
             // 
-            this.nudInt.Location = new System.Drawing.Point(434, 130);
+            this.nudInt.Location = new System.Drawing.Point(434, 153);
             this.nudInt.Maximum = new decimal(new int[] {
             18,
             0,
@@ -276,7 +256,7 @@
             // lbInt
             // 
             this.lbInt.AutoSize = true;
-            this.lbInt.Location = new System.Drawing.Point(366, 132);
+            this.lbInt.Location = new System.Drawing.Point(366, 155);
             this.lbInt.Name = "lbInt";
             this.lbInt.Size = new System.Drawing.Size(61, 13);
             this.lbInt.TabIndex = 18;
@@ -284,7 +264,7 @@
             // 
             // nudSag
             // 
-            this.nudSag.Location = new System.Drawing.Point(434, 152);
+            this.nudSag.Location = new System.Drawing.Point(434, 175);
             this.nudSag.Maximum = new decimal(new int[] {
             18,
             0,
@@ -307,7 +287,7 @@
             // 
             // nudCha
             // 
-            this.nudCha.Location = new System.Drawing.Point(434, 175);
+            this.nudCha.Location = new System.Drawing.Point(434, 198);
             this.nudCha.Maximum = new decimal(new int[] {
             18,
             0,
@@ -331,7 +311,7 @@
             // lbSag
             // 
             this.lbSag.AutoSize = true;
-            this.lbSag.Location = new System.Drawing.Point(366, 154);
+            this.lbSag.Location = new System.Drawing.Point(366, 177);
             this.lbSag.Name = "lbSag";
             this.lbSag.Size = new System.Drawing.Size(48, 13);
             this.lbSag.TabIndex = 21;
@@ -340,23 +320,64 @@
             // lbCha
             // 
             this.lbCha.AutoSize = true;
-            this.lbCha.Location = new System.Drawing.Point(366, 177);
+            this.lbCha.Location = new System.Drawing.Point(366, 200);
             this.lbCha.Name = "lbCha";
             this.lbCha.Size = new System.Drawing.Size(50, 13);
             this.lbCha.TabIndex = 22;
             this.lbCha.Text = "Charisme";
             // 
-            // cbClasse
+            // listbClasse
             // 
-            this.cbClasse.FormattingEnabled = true;
-            this.cbClasse.Items.AddRange(new object[] {
+            this.listbClasse.FormattingEnabled = true;
+            this.listbClasse.Items.AddRange(new object[] {
             "Guerrier",
-            "Voleur",
-            "Mage"});
-            this.cbClasse.Location = new System.Drawing.Point(56, 79);
-            this.cbClasse.Name = "cbClasse";
-            this.cbClasse.Size = new System.Drawing.Size(121, 21);
-            this.cbClasse.TabIndex = 23;
+            "Mage",
+            "Voleur"});
+            this.listbClasse.Location = new System.Drawing.Point(56, 70);
+            this.listbClasse.Name = "listbClasse";
+            this.listbClasse.Size = new System.Drawing.Size(120, 30);
+            this.listbClasse.TabIndex = 24;
+            // 
+            // listbRace
+            // 
+            this.listbRace.FormattingEnabled = true;
+            this.listbRace.Items.AddRange(new object[] {
+            "Humain",
+            "Drakéide",
+            "Nain"});
+            this.listbRace.Location = new System.Drawing.Point(56, 106);
+            this.listbRace.Name = "listbRace";
+            this.listbRace.Size = new System.Drawing.Size(120, 30);
+            this.listbRace.TabIndex = 25;
+            // 
+            // listbSexe
+            // 
+            this.listbSexe.FormattingEnabled = true;
+            this.listbSexe.Items.AddRange(new object[] {
+            "Masculin",
+            "Féminin"});
+            this.listbSexe.Location = new System.Drawing.Point(56, 142);
+            this.listbSexe.Name = "listbSexe";
+            this.listbSexe.Size = new System.Drawing.Size(120, 30);
+            this.listbSexe.TabIndex = 26;
+            // 
+            // lbPoints
+            // 
+            this.lbPoints.AutoSize = true;
+            this.lbPoints.Location = new System.Drawing.Point(319, 58);
+            this.lbPoints.Name = "lbPoints";
+            this.lbPoints.Size = new System.Drawing.Size(85, 13);
+            this.lbPoints.TabIndex = 27;
+            this.lbPoints.Text = "Points restants : ";
+            // 
+            // lbNbPts
+            // 
+            this.lbNbPts.AutoSize = true;
+            this.lbNbPts.Location = new System.Drawing.Point(404, 58);
+            this.lbNbPts.Name = "lbNbPts";
+            this.lbNbPts.Size = new System.Drawing.Size(19, 13);
+            this.lbNbPts.TabIndex = 28;
+            this.lbNbPts.Text = "22";
             // 
             // CreationPersonnage
             // 
@@ -364,7 +385,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 310);
             this.ControlBox = false;
-            this.Controls.Add(this.cbClasse);
+            this.Controls.Add(this.lbNbPts);
+            this.Controls.Add(this.lbPoints);
+            this.Controls.Add(this.listbSexe);
+            this.Controls.Add(this.listbRace);
+            this.Controls.Add(this.listbClasse);
             this.Controls.Add(this.lbCha);
             this.Controls.Add(this.lbSag);
             this.Controls.Add(this.nudCha);
@@ -379,8 +404,6 @@
             this.Controls.Add(this.lbCarac);
             this.Controls.Add(this.nudFor);
             this.Controls.Add(this.lbSexe);
-            this.Controls.Add(this.cbSexe);
-            this.Controls.Add(this.cbRace);
             this.Controls.Add(this.lbRace);
             this.Controls.Add(this.lbClasse);
             this.Controls.Add(this.lbNom);
@@ -388,6 +411,7 @@
             this.Controls.Add(this.btValider);
             this.Controls.Add(this.btRetour);
             this.Name = "CreationPersonnage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creation Personnage";
             ((System.ComponentModel.ISupportInitialize)(this.nudFor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCon)).EndInit();
@@ -408,8 +432,6 @@
         private System.Windows.Forms.Label lbNom;
         private System.Windows.Forms.Label lbClasse;
         private System.Windows.Forms.Label lbRace;
-        private System.Windows.Forms.ComboBox cbRace;
-        private System.Windows.Forms.ComboBox cbSexe;
         private System.Windows.Forms.Label lbSexe;
         private System.Windows.Forms.NumericUpDown nudFor;
         private System.Windows.Forms.Label lbCarac;
@@ -424,6 +446,10 @@
         private System.Windows.Forms.NumericUpDown nudCha;
         private System.Windows.Forms.Label lbSag;
         private System.Windows.Forms.Label lbCha;
-        private System.Windows.Forms.ComboBox cbClasse;
+        private System.Windows.Forms.ListBox listbClasse;
+        private System.Windows.Forms.ListBox listbRace;
+        private System.Windows.Forms.ListBox listbSexe;
+        private System.Windows.Forms.Label lbPoints;
+        private System.Windows.Forms.Label lbNbPts;
     }
 }

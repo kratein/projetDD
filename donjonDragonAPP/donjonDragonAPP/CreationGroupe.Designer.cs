@@ -114,6 +114,7 @@
             this.Controls.Add(this.btRetour);
             this.Controls.Add(this.btValider);
             this.Name = "CreationGroupe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreationGroupe";
             ((System.ComponentModel.ISupportInitialize)(this.pbPerso1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerso2)).EndInit();
