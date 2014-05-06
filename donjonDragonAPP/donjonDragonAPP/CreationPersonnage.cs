@@ -20,6 +20,7 @@ namespace donjonDragonAPP
         int intelligence;
         int sagesse;
         int charisme;
+        int ptsRestants = 22;
 
         public CreationPersonnage()
         {
@@ -69,7 +70,6 @@ namespace donjonDragonAPP
         private void listbClasse_SelectedValueChanged(object sender, EventArgs e)
         {
             lbBonusClasse.Visible = true;
-            lbCa.Visible = true;
             lbVig.Visible = true;
             lbRef.Visible = true;
             lbVol.Visible = true;
@@ -82,7 +82,6 @@ namespace donjonDragonAPP
 
             if (listbClasse.SelectedItem.ToString() == "Guerrier")
             {
-                lbCa.Text = "0";
                 lbVig.Text = "2";
                 lbRef.Text = "0";
                 lbVol.Text = "0";
@@ -101,13 +100,12 @@ namespace donjonDragonAPP
                 nudInt.Minimum = 8;
                 nudInt.Value = 8;
                 intelligence = 8;
-                nudCha.Minimum = 8;
-                nudCha.Value = 8;
-                charisme = 8;
+                nudCha.Minimum = 10;
+                nudCha.Value = 10;
+                charisme = 10;
             }
             if (listbClasse.SelectedItem.ToString() == "Magicien")
-            {
-                lbCa.Text = "0";
+            {                
                 lbVig.Text = "0";
                 lbRef.Text = "0";
                 lbVol.Text = "2";
@@ -126,13 +124,12 @@ namespace donjonDragonAPP
                 nudInt.Minimum = 10;
                 nudInt.Value = 10;
                 intelligence = 10;
-                nudCha.Minimum = 8;
-                nudCha.Value = 8;
-                charisme = 8;
+                nudCha.Minimum = 10;
+                nudCha.Value = 10;
+                charisme = 10;
             }
             if (listbClasse.SelectedItem.ToString() == "Voleur")
             {
-                lbCa.Text = "0";
                 lbVig.Text = "0";
                 lbRef.Text = "2";
                 lbVol.Text = "0";
@@ -145,9 +142,9 @@ namespace donjonDragonAPP
                 nudDex.Minimum = 10;
                 nudDex.Value = 10;
                 dexeterite = 10;
-                nudSag.Minimum = 8;
-                nudSag.Value = 8;
-                sagesse = 8;
+                nudSag.Minimum = 10;
+                nudSag.Value = 10;
+                sagesse = 10;
                 nudInt.Minimum = 8;
                 nudInt.Value = 8;
                 intelligence = 8;
@@ -190,11 +187,148 @@ namespace donjonDragonAPP
 
         private void nudFor_ValueChanged(object sender, EventArgs e)
         {
+            if (ptsRestants > 0)
+            {
+                int difference;
 
-        }
 
+                difference = Convert.ToInt32(nudFor.Value) - force;
 
+                if (difference == 1)
+                {
+                    if (force == 8)
+                    {
+                        ptsRestants = ptsRestants - 1;
+                    }
+                    else
+                    {
+                        if (force == 9)
+                        {
+                            ptsRestants = ptsRestants - 1;
+                        }
+                        else
+                        {
+                            if (force == 10)
+                            {
+                                ptsRestants = ptsRestants - 1;
+                            }
+                            else
+                            {
+                                if (force == 11)
+                                {
+                                    ptsRestants = ptsRestants - 1;
+                                }
+                                else
+                                {
+                                    if (force == 12)
+                                    {
+                                        ptsRestants = ptsRestants - 1;
+                                    }
+                                    else
+                                    {
+                                        if (force == 13)
+                                        {
+                                            ptsRestants = ptsRestants - 2;
+                                        }
+                                        else
+                                        {
+                                            if (force == 14)
+                                            {
+                                                ptsRestants = ptsRestants - 2;
+                                            }
+                                            else
+                                            {
+                                                if (force == 15)
+                                                {
+                                                    ptsRestants = ptsRestants - 2;
+                                                }
+                                                else
+                                                {
+                                                    if (force == 16)
+                                                    {
+                                                        ptsRestants = ptsRestants - 3;
+                                                    }
+                                                    else
+                                                    {
+                                                        if (force == 17)
+                                                        {
+                                                            ptsRestants = ptsRestants - 4;
+                                                        }
+                                                    }
+                                                }
+                                            }
 
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (difference == -1)
+                    {
+                        if (force == 18)
+                        {
+                            ptsRestants = ptsRestants + 4;
+                        }
+                        else
+                        {
+                            if (force == 17)
+                            {
+                                ptsRestants = ptsRestants + 3;
+                            }
+                            else
+                            {
+                                if (force == 16)
+                                {
+                                    ptsRestants = ptsRestants + 2;
+                                }
+                                else
+                                {
+                                    if (force == 15)
+                                    {
+                                        ptsRestants = ptsRestants + 2;
+                                    }
+                                    else
+                                    {
+                                        if (force == 14)
+                                        {
+                                            ptsRestants = ptsRestants + 2;
+                                        }
+                                        else
+                                        {
+                                            if (force == 13 || force == 12 || force == 11 || force == 10 || force == 9)
+                                            {
+                                                ptsRestants = ptsRestants + 1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
 
+            }
+            else
+            {
+                nudFor.Enabled = false;
+                nudCon.Enabled = false;
+                nudDex.Enabled = false;
+                nudInt.Enabled = false;
+                nudSag.Enabled = false;
+                nudCha.Enabled = false;
+            }
+        }       
+    
     }
+
 }
+
+
+
+
+
+

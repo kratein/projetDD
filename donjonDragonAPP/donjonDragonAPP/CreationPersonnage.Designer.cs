@@ -69,7 +69,6 @@
             this.lbVol = new System.Windows.Forms.Label();
             this.lbRef = new System.Windows.Forms.Label();
             this.lbVig = new System.Windows.Forms.Label();
-            this.lbCa = new System.Windows.Forms.Label();
             this.lbNbCa = new System.Windows.Forms.Label();
             this.lbNbVig = new System.Windows.Forms.Label();
             this.lbNbRef = new System.Windows.Forms.Label();
@@ -564,16 +563,6 @@
             this.lbVig.Text = "label1";
             this.lbVig.Visible = false;
             // 
-            // lbCa
-            // 
-            this.lbCa.AutoSize = true;
-            this.lbCa.Location = new System.Drawing.Point(536, 100);
-            this.lbCa.Name = "lbCa";
-            this.lbCa.Size = new System.Drawing.Size(35, 13);
-            this.lbCa.TabIndex = 45;
-            this.lbCa.Text = "label1";
-            this.lbCa.Visible = false;
-            // 
             // lbNbCa
             // 
             this.lbNbCa.AutoSize = true;
@@ -624,7 +613,6 @@
             this.Controls.Add(this.lbVol);
             this.Controls.Add(this.lbRef);
             this.Controls.Add(this.lbVig);
-            this.Controls.Add(this.lbCa);
             this.Controls.Add(this.lbVolonte);
             this.Controls.Add(this.lbReflexe);
             this.Controls.Add(this.lbVigueur);
@@ -719,7 +707,6 @@
         private System.Windows.Forms.Label lbVol;
         private System.Windows.Forms.Label lbRef;
         private System.Windows.Forms.Label lbVig;
-        private System.Windows.Forms.Label lbCa;
         private System.Windows.Forms.Label lbNbCa;
         private System.Windows.Forms.Label lbNbVig;
         private System.Windows.Forms.Label lbNbRef;
