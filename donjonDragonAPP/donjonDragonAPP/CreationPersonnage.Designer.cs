@@ -220,6 +220,7 @@
             0,
             0,
             0});
+            this.nudCon.ValueChanged += new System.EventHandler(this.nudCon_ValueChanged);
             // 
             // lbDex
             // 
@@ -253,6 +254,7 @@
             0,
             0,
             0});
+            this.nudDex.ValueChanged += new System.EventHandler(this.nudDex_ValueChanged);
             // 
             // nudInt
             // 
@@ -277,6 +279,7 @@
             0,
             0,
             0});
+            this.nudInt.ValueChanged += new System.EventHandler(this.nudInt_ValueChanged);
             // 
             // lbInt
             // 
@@ -310,6 +313,7 @@
             0,
             0,
             0});
+            this.nudSag.ValueChanged += new System.EventHandler(this.nudSag_ValueChanged);
             // 
             // nudCha
             // 
@@ -334,6 +338,7 @@
             0,
             0,
             0});
+            this.nudCha.ValueChanged += new System.EventHandler(this.nudCha_ValueChanged);
             // 
             // lbSag
             // 
@@ -568,36 +573,36 @@
             this.lbNbCa.AutoSize = true;
             this.lbNbCa.Location = new System.Drawing.Point(630, 99);
             this.lbNbCa.Name = "lbNbCa";
-            this.lbNbCa.Size = new System.Drawing.Size(13, 13);
+            this.lbNbCa.Size = new System.Drawing.Size(19, 13);
             this.lbNbCa.TabIndex = 50;
-            this.lbNbCa.Text = "0";
+            this.lbNbCa.Text = "10";
             // 
             // lbNbVig
             // 
             this.lbNbVig.AutoSize = true;
             this.lbNbVig.Location = new System.Drawing.Point(630, 122);
             this.lbNbVig.Name = "lbNbVig";
-            this.lbNbVig.Size = new System.Drawing.Size(13, 13);
+            this.lbNbVig.Size = new System.Drawing.Size(19, 13);
             this.lbNbVig.TabIndex = 51;
-            this.lbNbVig.Text = "0";
+            this.lbNbVig.Text = "10";
             // 
             // lbNbRef
             // 
             this.lbNbRef.AutoSize = true;
             this.lbNbRef.Location = new System.Drawing.Point(630, 145);
             this.lbNbRef.Name = "lbNbRef";
-            this.lbNbRef.Size = new System.Drawing.Size(13, 13);
+            this.lbNbRef.Size = new System.Drawing.Size(19, 13);
             this.lbNbRef.TabIndex = 52;
-            this.lbNbRef.Text = "0";
+            this.lbNbRef.Text = "10";
             // 
             // lbNbVol
             // 
             this.lbNbVol.AutoSize = true;
             this.lbNbVol.Location = new System.Drawing.Point(630, 167);
             this.lbNbVol.Name = "lbNbVol";
-            this.lbNbVol.Size = new System.Drawing.Size(13, 13);
+            this.lbNbVol.Size = new System.Drawing.Size(19, 13);
             this.lbNbVol.TabIndex = 53;
-            this.lbNbVol.Text = "0";
+            this.lbNbVol.Text = "10";
             // 
             // CreationPersonnage
             // 
