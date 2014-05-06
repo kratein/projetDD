@@ -53,6 +53,27 @@
             this.listbSexe = new System.Windows.Forms.ListBox();
             this.lbPoints = new System.Windows.Forms.Label();
             this.lbNbPts = new System.Windows.Forms.Label();
+            this.lbBonusF = new System.Windows.Forms.Label();
+            this.lbBonusC = new System.Windows.Forms.Label();
+            this.lbBonusD = new System.Windows.Forms.Label();
+            this.lbBonusI = new System.Windows.Forms.Label();
+            this.lbBonusCha = new System.Windows.Forms.Label();
+            this.lbBonusS = new System.Windows.Forms.Label();
+            this.lbBonus = new System.Windows.Forms.Label();
+            this.lbDefense = new System.Windows.Forms.Label();
+            this.lbVolonte = new System.Windows.Forms.Label();
+            this.lbReflexe = new System.Windows.Forms.Label();
+            this.lbVigueur = new System.Windows.Forms.Label();
+            this.lbClasseArmure = new System.Windows.Forms.Label();
+            this.lbBonusClasse = new System.Windows.Forms.Label();
+            this.lbVol = new System.Windows.Forms.Label();
+            this.lbRef = new System.Windows.Forms.Label();
+            this.lbVig = new System.Windows.Forms.Label();
+            this.lbCa = new System.Windows.Forms.Label();
+            this.lbNbCa = new System.Windows.Forms.Label();
+            this.lbNbVig = new System.Windows.Forms.Label();
+            this.lbNbRef = new System.Windows.Forms.Label();
+            this.lbNbVol = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDex)).BeginInit();
@@ -73,7 +94,7 @@
             // 
             // btValider
             // 
-            this.btValider.Location = new System.Drawing.Point(401, 275);
+            this.btValider.Location = new System.Drawing.Point(630, 275);
             this.btValider.Name = "btValider";
             this.btValider.Size = new System.Drawing.Size(75, 23);
             this.btValider.TabIndex = 1;
@@ -127,6 +148,7 @@
             // 
             // nudFor
             // 
+            this.nudFor.Enabled = false;
             this.nudFor.Location = new System.Drawing.Point(434, 85);
             this.nudFor.Maximum = new decimal(new int[] {
             18,
@@ -147,11 +169,12 @@
             0,
             0,
             0});
+            this.nudFor.ValueChanged += new System.EventHandler(this.nudFor_ValueChanged);
             // 
             // lbCarac
             // 
             this.lbCarac.AutoSize = true;
-            this.lbCarac.Location = new System.Drawing.Point(334, 33);
+            this.lbCarac.Location = new System.Drawing.Point(354, 12);
             this.lbCarac.Name = "lbCarac";
             this.lbCarac.Size = new System.Drawing.Size(85, 13);
             this.lbCarac.TabIndex = 11;
@@ -177,6 +200,7 @@
             // 
             // nudCon
             // 
+            this.nudCon.Enabled = false;
             this.nudCon.Location = new System.Drawing.Point(434, 108);
             this.nudCon.Maximum = new decimal(new int[] {
             18,
@@ -209,6 +233,7 @@
             // 
             // nudDex
             // 
+            this.nudDex.Enabled = false;
             this.nudDex.Location = new System.Drawing.Point(434, 130);
             this.nudDex.Maximum = new decimal(new int[] {
             18,
@@ -232,6 +257,7 @@
             // 
             // nudInt
             // 
+            this.nudInt.Enabled = false;
             this.nudInt.Location = new System.Drawing.Point(434, 153);
             this.nudInt.Maximum = new decimal(new int[] {
             18,
@@ -264,6 +290,7 @@
             // 
             // nudSag
             // 
+            this.nudSag.Enabled = false;
             this.nudSag.Location = new System.Drawing.Point(434, 175);
             this.nudSag.Maximum = new decimal(new int[] {
             18,
@@ -287,6 +314,7 @@
             // 
             // nudCha
             // 
+            this.nudCha.Enabled = false;
             this.nudCha.Location = new System.Drawing.Point(434, 198);
             this.nudCha.Maximum = new decimal(new int[] {
             18,
@@ -331,12 +359,13 @@
             this.listbClasse.FormattingEnabled = true;
             this.listbClasse.Items.AddRange(new object[] {
             "Guerrier",
-            "Mage",
+            "Magicien",
             "Voleur"});
             this.listbClasse.Location = new System.Drawing.Point(56, 70);
             this.listbClasse.Name = "listbClasse";
             this.listbClasse.Size = new System.Drawing.Size(120, 30);
             this.listbClasse.TabIndex = 24;
+            this.listbClasse.SelectedValueChanged += new System.EventHandler(this.listbClasse_SelectedValueChanged);
             // 
             // listbRace
             // 
@@ -349,6 +378,7 @@
             this.listbRace.Name = "listbRace";
             this.listbRace.Size = new System.Drawing.Size(120, 30);
             this.listbRace.TabIndex = 25;
+            this.listbRace.SelectedValueChanged += new System.EventHandler(this.listbRace_SelectedValueChanged);
             // 
             // listbSexe
             // 
@@ -364,7 +394,7 @@
             // lbPoints
             // 
             this.lbPoints.AutoSize = true;
-            this.lbPoints.Location = new System.Drawing.Point(319, 58);
+            this.lbPoints.Location = new System.Drawing.Point(366, 44);
             this.lbPoints.Name = "lbPoints";
             this.lbPoints.Size = new System.Drawing.Size(85, 13);
             this.lbPoints.TabIndex = 27;
@@ -373,18 +403,240 @@
             // lbNbPts
             // 
             this.lbNbPts.AutoSize = true;
-            this.lbNbPts.Location = new System.Drawing.Point(404, 58);
+            this.lbNbPts.Location = new System.Drawing.Point(451, 44);
             this.lbNbPts.Name = "lbNbPts";
             this.lbNbPts.Size = new System.Drawing.Size(19, 13);
             this.lbNbPts.TabIndex = 28;
             this.lbNbPts.Text = "22";
             // 
+            // lbBonusF
+            // 
+            this.lbBonusF.AutoSize = true;
+            this.lbBonusF.Location = new System.Drawing.Point(325, 87);
+            this.lbBonusF.Name = "lbBonusF";
+            this.lbBonusF.Size = new System.Drawing.Size(35, 13);
+            this.lbBonusF.TabIndex = 29;
+            this.lbBonusF.Text = "label1";
+            this.lbBonusF.Visible = false;
+            // 
+            // lbBonusC
+            // 
+            this.lbBonusC.AutoSize = true;
+            this.lbBonusC.Location = new System.Drawing.Point(325, 110);
+            this.lbBonusC.Name = "lbBonusC";
+            this.lbBonusC.Size = new System.Drawing.Size(35, 13);
+            this.lbBonusC.TabIndex = 30;
+            this.lbBonusC.Text = "label1";
+            this.lbBonusC.Visible = false;
+            // 
+            // lbBonusD
+            // 
+            this.lbBonusD.AutoSize = true;
+            this.lbBonusD.Location = new System.Drawing.Point(325, 132);
+            this.lbBonusD.Name = "lbBonusD";
+            this.lbBonusD.Size = new System.Drawing.Size(35, 13);
+            this.lbBonusD.TabIndex = 31;
+            this.lbBonusD.Text = "label1";
+            this.lbBonusD.Visible = false;
+            // 
+            // lbBonusI
+            // 
+            this.lbBonusI.AutoSize = true;
+            this.lbBonusI.Location = new System.Drawing.Point(325, 155);
+            this.lbBonusI.Name = "lbBonusI";
+            this.lbBonusI.Size = new System.Drawing.Size(35, 13);
+            this.lbBonusI.TabIndex = 32;
+            this.lbBonusI.Text = "label1";
+            this.lbBonusI.Visible = false;
+            // 
+            // lbBonusCha
+            // 
+            this.lbBonusCha.AutoSize = true;
+            this.lbBonusCha.Location = new System.Drawing.Point(325, 200);
+            this.lbBonusCha.Name = "lbBonusCha";
+            this.lbBonusCha.Size = new System.Drawing.Size(35, 13);
+            this.lbBonusCha.TabIndex = 33;
+            this.lbBonusCha.Text = "label1";
+            this.lbBonusCha.Visible = false;
+            // 
+            // lbBonusS
+            // 
+            this.lbBonusS.AutoSize = true;
+            this.lbBonusS.Location = new System.Drawing.Point(325, 177);
+            this.lbBonusS.Name = "lbBonusS";
+            this.lbBonusS.Size = new System.Drawing.Size(35, 13);
+            this.lbBonusS.TabIndex = 34;
+            this.lbBonusS.Text = "label1";
+            this.lbBonusS.Visible = false;
+            // 
+            // lbBonus
+            // 
+            this.lbBonus.AutoSize = true;
+            this.lbBonus.Location = new System.Drawing.Point(284, 61);
+            this.lbBonus.Name = "lbBonus";
+            this.lbBonus.Size = new System.Drawing.Size(82, 13);
+            this.lbBonus.TabIndex = 35;
+            this.lbBonus.Text = "Bonus de race :";
+            this.lbBonus.Visible = false;
+            // 
+            // lbDefense
+            // 
+            this.lbDefense.AutoSize = true;
+            this.lbDefense.Location = new System.Drawing.Point(609, 65);
+            this.lbDefense.Name = "lbDefense";
+            this.lbDefense.Size = new System.Drawing.Size(58, 13);
+            this.lbDefense.TabIndex = 36;
+            this.lbDefense.Text = "Défenses :";
+            // 
+            // lbVolonte
+            // 
+            this.lbVolonte.AutoSize = true;
+            this.lbVolonte.Location = new System.Drawing.Point(577, 167);
+            this.lbVolonte.Name = "lbVolonte";
+            this.lbVolonte.Size = new System.Drawing.Size(43, 13);
+            this.lbVolonte.TabIndex = 44;
+            this.lbVolonte.Text = "Volonté";
+            // 
+            // lbReflexe
+            // 
+            this.lbReflexe.AutoSize = true;
+            this.lbReflexe.Location = new System.Drawing.Point(577, 144);
+            this.lbReflexe.Name = "lbReflexe";
+            this.lbReflexe.Size = new System.Drawing.Size(43, 13);
+            this.lbReflexe.TabIndex = 41;
+            this.lbReflexe.Text = "Réflexe";
+            // 
+            // lbVigueur
+            // 
+            this.lbVigueur.AutoSize = true;
+            this.lbVigueur.Location = new System.Drawing.Point(577, 122);
+            this.lbVigueur.Name = "lbVigueur";
+            this.lbVigueur.Size = new System.Drawing.Size(43, 13);
+            this.lbVigueur.TabIndex = 39;
+            this.lbVigueur.Text = "Vigueur";
+            // 
+            // lbClasseArmure
+            // 
+            this.lbClasseArmure.AutoSize = true;
+            this.lbClasseArmure.Location = new System.Drawing.Point(577, 100);
+            this.lbClasseArmure.Name = "lbClasseArmure";
+            this.lbClasseArmure.Size = new System.Drawing.Size(24, 13);
+            this.lbClasseArmure.TabIndex = 38;
+            this.lbClasseArmure.Text = "CA ";
+            // 
+            // lbBonusClasse
+            // 
+            this.lbBonusClasse.AutoSize = true;
+            this.lbBonusClasse.Location = new System.Drawing.Point(495, 74);
+            this.lbBonusClasse.Name = "lbBonusClasse";
+            this.lbBonusClasse.Size = new System.Drawing.Size(91, 13);
+            this.lbBonusClasse.TabIndex = 49;
+            this.lbBonusClasse.Text = "Bonus de classe :";
+            this.lbBonusClasse.Visible = false;
+            // 
+            // lbVol
+            // 
+            this.lbVol.AutoSize = true;
+            this.lbVol.Location = new System.Drawing.Point(536, 168);
+            this.lbVol.Name = "lbVol";
+            this.lbVol.Size = new System.Drawing.Size(35, 13);
+            this.lbVol.TabIndex = 48;
+            this.lbVol.Text = "label1";
+            this.lbVol.Visible = false;
+            // 
+            // lbRef
+            // 
+            this.lbRef.AutoSize = true;
+            this.lbRef.Location = new System.Drawing.Point(536, 145);
+            this.lbRef.Name = "lbRef";
+            this.lbRef.Size = new System.Drawing.Size(35, 13);
+            this.lbRef.TabIndex = 47;
+            this.lbRef.Text = "label1";
+            this.lbRef.Visible = false;
+            // 
+            // lbVig
+            // 
+            this.lbVig.AutoSize = true;
+            this.lbVig.Location = new System.Drawing.Point(536, 123);
+            this.lbVig.Name = "lbVig";
+            this.lbVig.Size = new System.Drawing.Size(35, 13);
+            this.lbVig.TabIndex = 46;
+            this.lbVig.Text = "label1";
+            this.lbVig.Visible = false;
+            // 
+            // lbCa
+            // 
+            this.lbCa.AutoSize = true;
+            this.lbCa.Location = new System.Drawing.Point(536, 100);
+            this.lbCa.Name = "lbCa";
+            this.lbCa.Size = new System.Drawing.Size(35, 13);
+            this.lbCa.TabIndex = 45;
+            this.lbCa.Text = "label1";
+            this.lbCa.Visible = false;
+            // 
+            // lbNbCa
+            // 
+            this.lbNbCa.AutoSize = true;
+            this.lbNbCa.Location = new System.Drawing.Point(630, 99);
+            this.lbNbCa.Name = "lbNbCa";
+            this.lbNbCa.Size = new System.Drawing.Size(13, 13);
+            this.lbNbCa.TabIndex = 50;
+            this.lbNbCa.Text = "0";
+            // 
+            // lbNbVig
+            // 
+            this.lbNbVig.AutoSize = true;
+            this.lbNbVig.Location = new System.Drawing.Point(630, 122);
+            this.lbNbVig.Name = "lbNbVig";
+            this.lbNbVig.Size = new System.Drawing.Size(13, 13);
+            this.lbNbVig.TabIndex = 51;
+            this.lbNbVig.Text = "0";
+            // 
+            // lbNbRef
+            // 
+            this.lbNbRef.AutoSize = true;
+            this.lbNbRef.Location = new System.Drawing.Point(630, 145);
+            this.lbNbRef.Name = "lbNbRef";
+            this.lbNbRef.Size = new System.Drawing.Size(13, 13);
+            this.lbNbRef.TabIndex = 52;
+            this.lbNbRef.Text = "0";
+            // 
+            // lbNbVol
+            // 
+            this.lbNbVol.AutoSize = true;
+            this.lbNbVol.Location = new System.Drawing.Point(630, 167);
+            this.lbNbVol.Name = "lbNbVol";
+            this.lbNbVol.Size = new System.Drawing.Size(13, 13);
+            this.lbNbVol.TabIndex = 53;
+            this.lbNbVol.Text = "0";
+            // 
             // CreationPersonnage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 310);
+            this.ClientSize = new System.Drawing.Size(717, 310);
             this.ControlBox = false;
+            this.Controls.Add(this.lbNbVol);
+            this.Controls.Add(this.lbNbRef);
+            this.Controls.Add(this.lbNbVig);
+            this.Controls.Add(this.lbNbCa);
+            this.Controls.Add(this.lbBonusClasse);
+            this.Controls.Add(this.lbVol);
+            this.Controls.Add(this.lbRef);
+            this.Controls.Add(this.lbVig);
+            this.Controls.Add(this.lbCa);
+            this.Controls.Add(this.lbVolonte);
+            this.Controls.Add(this.lbReflexe);
+            this.Controls.Add(this.lbVigueur);
+            this.Controls.Add(this.lbClasseArmure);
+            this.Controls.Add(this.lbDefense);
+            this.Controls.Add(this.lbBonus);
+            this.Controls.Add(this.lbBonusS);
+            this.Controls.Add(this.lbBonusCha);
+            this.Controls.Add(this.lbBonusI);
+            this.Controls.Add(this.lbBonusD);
+            this.Controls.Add(this.lbBonusC);
+            this.Controls.Add(this.lbBonusF);
             this.Controls.Add(this.lbNbPts);
             this.Controls.Add(this.lbPoints);
             this.Controls.Add(this.listbSexe);
@@ -451,5 +703,26 @@
         private System.Windows.Forms.ListBox listbSexe;
         private System.Windows.Forms.Label lbPoints;
         private System.Windows.Forms.Label lbNbPts;
+        private System.Windows.Forms.Label lbBonusF;
+        private System.Windows.Forms.Label lbBonusC;
+        private System.Windows.Forms.Label lbBonusD;
+        private System.Windows.Forms.Label lbBonusI;
+        private System.Windows.Forms.Label lbBonusCha;
+        private System.Windows.Forms.Label lbBonusS;
+        private System.Windows.Forms.Label lbBonus;
+        private System.Windows.Forms.Label lbDefense;
+        private System.Windows.Forms.Label lbVolonte;
+        private System.Windows.Forms.Label lbReflexe;
+        private System.Windows.Forms.Label lbVigueur;
+        private System.Windows.Forms.Label lbClasseArmure;
+        private System.Windows.Forms.Label lbBonusClasse;
+        private System.Windows.Forms.Label lbVol;
+        private System.Windows.Forms.Label lbRef;
+        private System.Windows.Forms.Label lbVig;
+        private System.Windows.Forms.Label lbCa;
+        private System.Windows.Forms.Label lbNbCa;
+        private System.Windows.Forms.Label lbNbVig;
+        private System.Windows.Forms.Label lbNbRef;
+        private System.Windows.Forms.Label lbNbVol;
     }
 }
