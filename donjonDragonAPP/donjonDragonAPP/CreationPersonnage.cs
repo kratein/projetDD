@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DonjonEtDragon;
 
 namespace donjonDragonAPP
 {
     public partial class CreationPersonnage : Form
     {
         CreationGroupe c = new CreationGroupe();
+        Personnage pers;
         bool chiffre;
         string prenom;
         int force;
@@ -1154,6 +1156,129 @@ namespace donjonDragonAPP
                 lbNbVol.Text = volonte.ToString();
             }
         }
+
+        private void listbRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            charisme = Convert.ToInt32(nudCha.Value);
+            charismeT = charisme + Convert.ToInt32(lbBonusCha.Text);
+            if (sagesseT < charismeT)
+            {
+                int modCarac;
+
+                if (charisme <= 8)
+                {
+                    modCarac = -1;
+                }
+                else
+                {
+                    float calcul = (charismeT - 10) / 2;
+                    modCarac = (int)(Math.Floor(calcul));
+                }
+                volonte = 10 + modCarac;
+                lbNbVol.Text = volonte.ToString();
+            }
+            else
+            {
+                sagesse = Convert.ToInt32(nudSag.Value);
+                sagesseT = sagesse + Convert.ToInt32(lbBonusS.Text);
+                if (sagesseT > charismeT)
+                {
+                    int modCarac;
+
+                    if (sagesse <= 8)
+                    {
+                        modCarac = -1;
+                    }
+                    else
+                    {
+                        float calcul = (sagesseT - 10) / 2;
+                        modCarac = (int)(Math.Floor(calcul));
+                    }
+                    volonte = 10 + modCarac;
+                    lbNbVol.Text = volonte.ToString();
+                }                
+            }
+            intelligence = Convert.ToInt32(nudInt.Value);
+            intelligenceT = intelligence + Convert.ToInt32(lbBonusI.Text);
+            if (dexeteriteT < intelligenceT)
+            {
+                int modCarac;
+
+                if (intelligence <= 8)
+                {
+                    modCarac = -1;
+                }
+                else
+                {
+                    float calcul = (intelligenceT - 10) / 2;
+                    modCarac = (int)(Math.Floor(calcul));
+                }
+                reflexe = 10 + modCarac;
+                lbNbRef.Text = reflexe.ToString();
+            }
+            else
+            {
+                dexeterite = Convert.ToInt32(nudDex.Value);
+                dexeteriteT = dexeterite + Convert.ToInt32(lbBonusD.Text);
+                if (dexeteriteT > intelligenceT)
+                {
+                    int modCarac;
+
+                    if (dexeterite <= 8)
+                    {
+                        modCarac = -1;
+                    }
+                    else
+                    {
+                        float calcul = (dexeteriteT - 10) / 2;
+                        modCarac = (int)(Math.Floor(calcul));
+                    }
+                    reflexe = 10 + modCarac;
+                    lbNbRef.Text = reflexe.ToString();
+                }
+            }
+            constitution = Convert.ToInt32(nudCon.Value);
+            constitutionT = constitution + Convert.ToInt32(lbBonusC.Text);
+            if (forceT < constitutionT)
+            {
+                int modCarac;
+
+                if (constitution <= 8)
+                {
+                    modCarac = -1;
+                }
+                else
+                {
+                    float calcul = (constitutionT - 10) / 2;
+                    modCarac = (int)(Math.Floor(calcul));
+                }
+                vigueur = 10 + modCarac;
+                lbNbVig.Text = vigueur.ToString();
+            }
+            else
+            {
+            force = Convert.ToInt32(nudFor.Value);
+            forceT = force + Convert.ToInt32(lbBonusF.Text);
+            if (forceT > constitutionT)
+            {
+                int modCarac;
+                float calcul;
+
+                if (force <= 8)
+                {
+                    modCarac = -1;
+                }
+                else
+                {
+                    calcul = (forceT - 10) / 2;
+                    modCarac = (int)(Math.Floor(calcul));
+                }
+                vigueur = 10 + modCarac;
+                lbNbVig.Text = vigueur.ToString();
+            }
+            }
+        }
+
                  
             
      }
